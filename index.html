@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>浪漫 DUKE 特效工作室｜活動特效・會場佈置</title>
+  <meta name="description" content="浪漫 DUKE 特效工作室：彩帶、煙花、煙霧、泡泡、燈光、會場佈置、氣球佈置。婚禮、里民活動、派對、尾牙春酒、校園活動、開幕活動。聯絡人 JIM 0937-468-068。" />
+  <style>
+    :root{
+      --panel: rgba(255,255,255,.08);
+      --panel2: rgba(255,255,255,.06);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --line: rgba(255,255,255,.16);
+      --accent: #4dd7ff;
+      --accent2:#ffd54a;
+      --danger:#ff6b6b;
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang TC", "Noto Sans TC", Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(77,215,255,.20), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(255,213,74,.18), transparent 60%),
+        radial-gradient(900px 700px at 40% 120%, rgba(141,255,191,.12), transparent 62%),
+        linear-gradient(180deg, #070a14, #0b1020 55%, #070a14);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(10,14,30,.65);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:14px;
+    }
+    .brand{ display:flex; align-items:center; gap:12px; min-width:220px; }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: conic-gradient(from 210deg, var(--accent), var(--accent2), #a78bfa, var(--accent));
+      box-shadow: 0 10px 30px rgba(77,215,255,.18);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:9px;
+      border-radius:10px;
+      background: rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.22);
+    }
+    .brand h1{ font-size:16px; line-height:1.2; margin:0; letter-spacing:.5px; white-space:nowrap; }
+    .brand small{ display:block; margin-top:2px; font-size:12px; color:var(--muted); }
+    nav{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+    nav a{
+      font-size:13px; color:var(--muted);
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+      transition: .2s ease;
+    }
+    nav a:hover{
+      color:var(--text);
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+    }
+    .nav-cta{ display:flex; gap:10px; align-items:center; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      font-weight:600;
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+      transition: .18s ease;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09) }
+    .btn.primary{
+      border-color: rgba(77,215,255,.38);
+      background: linear-gradient(180deg, rgba(77,215,255,.24), rgba(77,215,255,.10));
+    }
+    .btn.warn{
+      border-color: rgba(255,213,74,.42);
+      background: linear-gradient(180deg, rgba(255,213,74,.22), rgba(255,213,74,.10));
+    }
+
+    .hero{ padding: 34px 0 10px; }
+    .hero-grid{
+      display:grid; grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .card{
+      background: var(--panel);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{ padding: 26px; position:relative; overflow:hidden; }
+    .hero-left:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(600px 280px at 20% 0%, rgba(77,215,255,.24), transparent 55%),
+        radial-gradient(700px 320px at 80% 20%, rgba(255,213,74,.18), transparent 58%);
+      pointer-events:none;
+    }
+    .hero-left > *{ position:relative; z-index:1 }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.16);
+      color:var(--muted);
+      font-size:12px;
+      width:fit-content;
+    }
+    .kicker .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(77,215,255,.15);
+    }
+    .hero-title{
+      font-size: 34px;
+      line-height: 1.18;
+      margin: 14px 0 10px;
+      letter-spacing: .5px;
+      word-break: keep-all;
+    }
+    .hero-sub{
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0 0 18px;
+      max-width: 58ch;
+    }
+    .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin: 14px 0 0; }
+    .chips{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px; }
+    .chip{
+      font-size:12px; color: var(--muted);
+      padding:8px 10px; border-radius:999px;
+      border:1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.04);
+    }
+    .hero-right{ padding: 18px; }
+    .mini{
+      padding: 16px;
+      background: var(--panel2);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+    }
+    .mini h3{ margin:0 0 10px; font-size:16px }
+    .mini p{ margin:0; color:var(--muted); line-height:1.7; font-size:13px }
+    .contact-box{ margin-top: 14px; display:grid; gap:10px; }
+    .contact-row{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      padding:12px 12px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:14px;
+      background: rgba(255,255,255,.05);
+    }
+    .label{ color:var(--muted); font-size:12px }
+    .value{ font-weight:700; letter-spacing:.5px }
+    .note{
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,213,74,.24);
+      background: rgba(255,213,74,.08);
+      color: rgba(255,255,255,.86);
+      font-size:12.5px;
+      line-height:1.6;
+    }
+
+    section{ padding: 28px 0; }
+    .section-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom: 14px; }
+    .section-head h2{ margin:0; font-size:20px; letter-spacing:.3px; }
+    .section-head p{ margin:0; color:var(--muted); font-size:13px; line-height:1.6; max-width: 60ch; }
+
+    .grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
+    .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+    .tile{
+      padding: 16px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 12px 28px rgba(0,0,0,.22);
+      min-height: 96px;
+      display:flex; gap:12px;
+      align-items:flex-start;
+    }
+    .icon{
+      width:42px; height:42px; border-radius:14px;
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.16);
+      background: radial-gradient(circle at 30% 20%, rgba(77,215,255,.22), rgba(255,255,255,.05));
+      flex:0 0 auto;
+    }
+    .tile h3{ margin:0 0 6px; font-size:15px }
+    .tile p{ margin:0; color:var(--muted); font-size:13px; line-height:1.6 }
+
+    .pill-row{ display:flex; flex-wrap:wrap; gap:10px; }
+    .pill{
+      padding:10px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.88);
+      font-size:13px;
+    }
+
+    .form-wrap{ padding: 18px; }
+    form{
+      display:grid; gap:12px;
+      padding: 16px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+    }
+    .row{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+    .field{ display:grid; gap:6px; }
+    label{ font-size:12px; color:var(--muted) }
+    input, textarea, select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(5,8,18,.55);
+      color: var(--text);
+      outline:none;
+      transition: .15s ease;
+      font-size: 14px;
+    }
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(77,215,255,.45);
+      box-shadow: 0 0 0 4px rgba(77,215,255,.12);
+    }
+    textarea{ min-height: 110px; resize: vertical; }
+    .checks{
+      display:grid; grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:10px;
+      padding: 10px 0 0;
+    }
+    .check{
+      display:flex; align-items:center; gap:10px;
+      padding: 10px 10px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+    .check input{ width:18px; height:18px; padding:0; margin:0 }
+    .form-actions{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; flex-wrap:wrap;
+      margin-top: 6px;
+    }
+    .hint{ color: var(--muted); font-size:12px; line-height:1.6 }
+    .success, .error{
+      display:none;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      font-size: 13px;
+    }
+    .success{ border-color: rgba(141,255,191,.35); background: rgba(141,255,191,.10) }
+    .error{ border-color: rgba(255,107,107,.35); background: rgba(255,107,107,.10) }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding: 18px 0 30px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .foot{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid-3{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px){
+      nav{ display:none; }
+      .grid-3, .grid-2{ grid-template-columns: 1fr; }
+      .row{ grid-template-columns: 1fr; }
+      .checks{ grid-template-columns: 1fr; }
+      .hero-title{ font-size: 28px; }
+    }
+  
+    /* Google 表單嵌入 */
+    .embed-wrap{
+      margin-top:12px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      overflow:hidden;
+      background:rgba(0,0,0,.15);
+    }
+    .embed-wrap iframe{
+      width:100%;
+      height:920px;
+      border:0;
+    }
+    @media (max-width:680px){
+      .embed-wrap iframe{ height:980px; }
+    }
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="#top" aria-label="回到頂部">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>浪漫 DUKE 特效工作室</h1>
+            <small>活動特效・會場佈置</small>
+          </div>
+        </a>
+
+        <nav aria-label="主選單">
+          <a href="#services">服務項目</a>
+          <a href="#events">適用活動</a>
+          <a href="#why">為何選擇我們</a>
+          <a href="#form">需求問卷</a>
+          <a href="#contact">聯絡方式</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn primary" href="#form">填寫需求問卷</a>
+          <a class="btn warn" href="tel:0937468068">立即致電</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card hero-left">
+            <div class="kicker"><span class="dot"></span> 小型活動也能有大場面質感</div>
+            <h2 class="hero-title">為每一場重要時刻，打造最難忘的浪漫特效</h2>
+            <p class="hero-sub">
+              浪漫 DUKE 特效工作室專注於彩帶、煙花、煙霧、泡泡、燈光及會場／氣球佈置。
+              從溫馨感動到熱鬧歡樂，用專業設備與細膩執行，讓現場氣氛一秒到位。
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#form">我想諮詢／報價</a>
+              <a class="btn" href="#services">先看服務項目</a>
+            </div>
+            <div class="chips" aria-label="熱門服務標籤">
+              <span class="chip">彩帶</span>
+              <span class="chip">煙花</span>
+              <span class="chip">煙霧</span>
+              <span class="chip">泡泡</span>
+              <span class="chip">燈光</span>
+              <span class="chip">會場／氣球佈置</span>
+            </div>
+          </div>
+
+          <aside class="card hero-right" id="contact">
+            <div class="mini">
+              <h3>快速聯絡</h3>
+              <p>工作時間較不固定。若未即時接聽，請留言或先填寫需求問卷，我會盡快回覆您。</p>
+
+              <div class="contact-box" role="list">
+                <div class="contact-row" role="listitem">
+                  <div>
+                    <div class="label">聯絡人</div>
+                    <div class="value">JIM</div>
+                  </div>
+                  <a class="btn" href="#form">填問卷</a>
+                </div>
+                <div class="contact-row" role="listitem">
+                  <div>
+                    <div class="label">電話</div>
+                    <div class="value">0937-468-068</div>
+                  </div>
+                  <a class="btn warn" href="tel:0937468068">撥打</a>
+                </div>
+              </div>
+
+              <div class="note">
+                📌 小提醒：若您已確定活動日期與想要的特效，填寫問卷能讓我更快提供建議與報價。
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>主要服務項目</h2>
+            <p>依活動流程與場地條件規劃，讓每個關鍵時刻都更有記憶點。</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="tile"><div class="icon">🎉</div><div><h3>彩帶</h3><p>進場、揭幕、高潮時刻的氣氛神器，瞬間點燃現場。</p></div></div>
+          <div class="tile"><div class="icon">🎆</div><div><h3>煙花</h3><p>營造浪漫與儀式感，讓重要瞬間更震撼。</p></div></div>
+          <div class="tile"><div class="icon">🌫️</div><div><h3>煙霧</h3><p>提升舞台層次與氛圍，打造夢幻感與視覺效果。</p></div></div>
+          <div class="tile"><div class="icon">🫧</div><div><h3>泡泡</h3><p>溫馨、童趣、浪漫都適合，特別適合合照與互動。</p></div></div>
+          <div class="tile"><div class="icon">💡</div><div><h3>燈光</h3><p>配合流程與情緒，強化焦點與現場質感。</p></div></div>
+          <div class="tile"><div class="icon">🎈</div><div><h3>會場／氣球佈置</h3><p>依主題量身打造佈置，兼顧美感與動線。</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>適用活動</h2>
+            <p>小型到中型活動都能配合，歡迎先填問卷讓我了解需求。</p>
+          </div>
+        </div>
+
+        <div class="pill-row">
+          <span class="pill">婚禮</span>
+          <span class="pill">里民活動</span>
+          <span class="pill">派對活動</span>
+          <span class="pill">尾牙・春酒</span>
+          <span class="pill">校園活動</span>
+          <span class="pill">開幕活動</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>為何選擇我們</h2>
+            <p>即使目前沒有作品照片，也能先用清楚的流程與專業執行，讓您放心交給我們。</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="tile"><div class="icon">🧩</div><div><h3>客製規劃，不制式套用</h3><p>依活動性質、流程與場地條件安排特效，呈現更貼近您的氛圍。</p></div></div>
+          <div class="tile"><div class="icon">🛡️</div><div><h3>安全執行，溝通清楚</h3><p>使用合規設備，執行前完整確認，讓主辦方安心、活動順利。</p></div></div>
+          <div class="tile"><div class="icon">⚡</div><div><h3>小型活動也用心</h3><p>不論婚禮、校園或開幕儀式，都以同樣標準用心完成每個細節。</p></div></div>
+          <div class="tile"><div class="icon">📩</div><div><h3>回覆確實、配合度高</h3><p>工作時間較不固定，但每則訊息都會親自回覆，並可視現場調整配合。</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="form">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>活動特效需求問卷</h2>
+            <p>一頁填完即可送出。此為「靜態示範表單」：若要寄信＋存後台，請用 WordPress 表單外掛（Fluent Forms 等）套用同樣欄位。</p>
+          </div>
+        </div>
+
+        <div class="card form-wrap">
+          
+<!--
+  Google 表單整合說明：
+  1) 請先建立 Google 表單（建議欄位：姓名、聯絡方式、活動日期、活動類型、特效需求、其他需求）
+  2) 在 Google 表單右上角「傳送」→「<>」取得「嵌入」網址（會長得像：https://docs.google.com/forms/d/e/XXXX/viewform?embedded=true）
+  3) 把下方 iframe 的 src 改成你的嵌入網址即可。
+-->
+<div class="field" style="margin-top:6px;">
+  <p style="margin:0;color:rgba(255,255,255,.75);">請填寫下方需求問卷（Google 表單），我收到後會盡快回覆您。</p>
+  <div class="embed-wrap" aria-label="需求問卷（Google 表單）">
+    <iframe
+      src="https://docs.google.com/forms/d/e/PASTE_YOUR_FORM_ID_HERE/viewform?embedded=true"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="浪漫 DUKE 需求問卷（Google 表單）"
+    ></iframe>
+  </div>
+</div>
+
+<div class="form-actions">
+  <a class="btn primary" href="https://docs.google.com/forms/d/e/PASTE_YOUR_FORM_ID_HERE/viewform" target="_blank" rel="noopener">若表單無法顯示，點我開新視窗填寫</a>
+  <div class="hint">
+    或直接聯絡：<strong>JIM</strong>　
+    <a href="tel:0937468068" class="btn" style="padding:8px 10px;border-radius:12px;">0937-468-068</a>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <div style="font-weight:800;color:rgba(255,255,255,.92);">浪漫 DUKE 特效工作室</div>
+          <div>聯絡人：JIM　｜　電話：0937-468-068</div>
+          <div>工作時間較不固定，留言給我我會回覆您。</div>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="#top">回到頂部</a>
+          <a class="btn primary" href="#form">填寫需求問卷</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        if(!id || id === "#") return;
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+    /* 表單已改為 Google 表單嵌入：不需要前端 submit handler */
+
+  </script>
+</body>
+</html>
