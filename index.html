@@ -319,7 +319,46 @@
     @media (max-width:680px){
       .embed-wrap iframe{ height:980px; }
     }
+.gallery{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 一排 3 張 -> 兩排 */
+  gap:14px;
+}
 
+.shot{
+  margin:0;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 12px 28px rgba(0,0,0,.22);
+}
+
+.shot img{
+  display:block;
+  width:100%;
+  height:220px;        /* ✅ 所有圖片統一高度（你可改 200/240） */
+  object-fit:cover;    /* ✅ 自動裁切，畫面不變形 */
+  object-position:center;
+}
+
+.shot figcaption{
+  padding:10px 12px;
+  font-size:13px;
+  color: rgba(255,255,255,.72);
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+/* 手機版：一排 2 張（比較好看） */
+@media (max-width: 860px){
+  .gallery{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .shot img{
+    height:160px;
+  }
+}
   </style>
 </head>
 <body>
