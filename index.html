@@ -359,6 +359,18 @@
     height:160px;
   }
 }
+ .floating-quote{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:999;
+  background:linear-gradient(135deg,#4dd7ff,#ffd54a);
+  color:#000;
+  padding:14px 18px;
+  border-radius:999px;
+  font-weight:700;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
   </style>
 </head>
 <body>
@@ -477,7 +489,7 @@
         <div class="gallery">
           <figure class="shot">
             <img src="./assets/scene1.jpg" alt="冷焰火效果示意" loading="lazy">
-            <figcaption>冷焰火（舞台效果）</figcaption>
+            <figcaption>冷焰火（舞台效果）<br><small>婚禮進場｜高潮段落</small></figcaption>
           </figure>
 
           <figure class="shot">
@@ -574,6 +586,36 @@
     </div>
   </div>
 </section>
+    <section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <h2>常見問題</h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="tile">
+        <h3>室內可以使用煙火嗎？</h3>
+        <p>以冷焰火、安全特效為主，會依場地規範評估。</p>
+      </div>
+
+      <div class="tile">
+        <h3>需要提前多久預約？</h3>
+        <p>建議至少 7 天前，熱門日期越早越好。</p>
+      </div>
+
+      <div class="tile">
+        <h3>會提供場地勘查嗎？</h3>
+        <p>可依需求安排現場勘查或提供照片評估。</p>
+      </div>
+
+      <div class="tile">
+        <h3>臨時取消怎麼處理？</h3>
+        <p>依實際準備進度討論調整。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
     <section id="form">
       <div class="container">
         <div class="section-head">
@@ -664,5 +706,6 @@
     /* 表單已改為 Google 表單嵌入：不需要前端 submit handler */
 
   </script>
+ <a href="#form" class="floating-quote">立即詢價</a> 
 </body>
 </html>
